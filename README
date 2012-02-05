@@ -1,0 +1,68 @@
+
+Android Lua and Squirrel Examples
+======================================================================
+
+This package contains simple "Hello, World" demonstrations for
+embedding the Lua and Squirrel languages into Android apps.  No
+inter-language glue is provided, other than the minimum JNI code to
+call the embedded language from Java.
+
+For more details, see:
+
+http://cafbit.com/entry/lua_and_squirrel_overhead
+
+
+Building the examples
+--------------------------------------------------
+
+1. Install Eclipse and Google's Android Development Tools (ADT)
+   for Eclipse.
+
+2. Set up a fresh Eclipse workspace with the following settings which
+   can be configured in the preferences:
+    a. Under Java->Compiler,
+       - set the Java compliance level to "1.6",
+       - uncheck "Use default compliance settings", and
+       - make sure "Generated .class files compatibility" and "Source
+         compatibility" are set to "1.6".
+    b. Under Android, set up your Android SDK directory and target.
+       I use the "Android 2.1-update1" target for Valence.
+
+3. Add the projects:
+    a. File->Import...->General->Existing Projects into Workspace.
+    b. Select the directory that contains these two projects.
+    c. A list of the projects will appear.  Select each project.
+    d. Leave "Copy projects into workspace" and "Add project to working
+       sets" unchecked.
+    e. "Finish".
+
+The projects will initially appear with many errors flagged, as
+Eclipse and the ADT perform the build tasks, but should settle in a
+bit.  If not, it sometimes helps to close the project (right-click on
+the project name and click "Close Project") and re-open it, which
+forces ADT to regenerate certain files.
+
+Run "ndk-build" from each project's jni directory to compile the
+shared libraries.
+
+
+Credit
+--------------------------------------------------
+
+The lua-example project was based on the android-lua project, which
+shows how to integrate Lua into an Android app.  The android-lua
+project maintainer also tweaked a few lines of the Lua source
+to allow compilation for Android.
+
+android-lua
+A bootstrap demonstration of Android+Lua+JNI
+http://code.google.com/p/android-lua/
+
+
+License
+--------------------------------------------------
+
+My contribution to this project is licensed under the Apache License,
+Version 2.0.  The included Lua and Squirrel packages are separately
+licensed.  See LICENSE-LUA and LICENSE-SQUIRREL for details.
+
